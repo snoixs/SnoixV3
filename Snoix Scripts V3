@@ -1,0 +1,125 @@
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Snoix Scripts V3",
+   LoadingTitle = "Snoix Scripts V3",
+   LoadingSubtitle = "From Snoix's",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Snoix Scripts key",
+      Subtitle = "Link is discord",
+      Note = "Join sever to get key",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"THESNOIX1"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Scripts", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Scripts:")
+
+Rayfield:Notify({
+   Title = "Executed (Snoix Scripts V3)",
+   Content = "Best Uni Hub ",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Blox Fruits Script = W-azure",
+   Callback = function()
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Arsenal Script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Arsenalscript.txt"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Bedwars Script = VapeV4",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Outlaster Script",
+   Callback = function()
+   loadstring(game:HttpGet"https://thedragonslayer2.github.io")()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Blade Ball Script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/autoparry.lua"))()
+   end,
+})
+
+local MainTab = Window:CreateTab("Local Player", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Local Player")
+
+local Slider = MainTab:CreateSlider({
+   Name = "Walkspeed Slider",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Walkspeed",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "Jump Power Slider",
+   Range = {0, 250},
+   Increment = 10,
+   Suffix = "Jump Power",
+   CurrentValue = 50,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Jump",
+   Callback = function()
+    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))()
+   end,
+})
+
+local MainTab = Window:CreateTab("Snoix Scripts V3", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Snoix Scripts")
+
+local Button = MainTab:CreateButton({
+   Name = "Snoix Strucid",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/snoixs/snoixs/main/snoix"))()
+   end,
+})
